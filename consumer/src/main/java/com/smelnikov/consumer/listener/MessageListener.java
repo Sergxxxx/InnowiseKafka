@@ -10,7 +10,7 @@ public class MessageListener {
     @Autowired
     private ProductService productService;
 
-    @KafkaListener(topics = "user", containerFactory = "kafkaListenerContainerFactory")
+    @KafkaListener(topics = "user", containerFactory = "kafkaListenerContainerFactory", groupId = "group_id")
     public void listener (Product product){
         System.out.println("Recieved message: " + product);
         productService.saveMessage(product);

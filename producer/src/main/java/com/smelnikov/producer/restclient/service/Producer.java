@@ -23,7 +23,7 @@ public class Producer {
     @Autowired
     private KafkaTemplate<String, Product> kafkaTemplate;
 
-    @Value(value = "topic1")
+    @Value(value = "user")
     private String topicName;
 
     public void sendMessage(Product product){

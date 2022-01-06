@@ -29,5 +29,31 @@ services:
     ports:
       - "27017:27017"
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=mongo
-      - MONGO_INITDB_ROOT_PASSWORD=mongo
+      - MONGO_INITDB_DATABASE=
+      - MONGO_INITDB_ROOT_USERNAME=
+      - MONGO_INITDB_ROOT_PASSWORD=
+#    volumes:
+#      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+#      - $PWD/mongo-entrypoint/:/docker-entrypoint-initdb.d/
+
+#  producer:
+#    build: ./
+#    restart: always
+#    container_name: producer
+#    ports:
+#      - "8081:9000"
+#    depends_on:
+#      - kafka
+
+#  consumer:
+#    image: springboot-mongo
+#
+#    build:
+#      context: ./consumer
+#    restart: always
+#    container_name: producer
+#    ports:
+#      - "8082:8082"
+#    depends_on:
+#      - "kafka"
+#      - "db"
