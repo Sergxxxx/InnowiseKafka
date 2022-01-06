@@ -23,11 +23,12 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
   db:
-    image: mongo
+    image: mongo:latest
     restart: always
     container_name: db
     ports:
       - "27017:27017"
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=mongo
-      - MONGO_INITDB_ROOT_PASSWORD=mongo
+      - MONGO_DB=mongo
+      - MONGO_USER=mongo
+      - MONGO_PASSWORD=mongo

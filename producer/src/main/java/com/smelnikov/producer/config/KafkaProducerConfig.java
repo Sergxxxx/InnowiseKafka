@@ -1,4 +1,4 @@
-package com.smelnikov.producer.kafka.config;
+package com.smelnikov.producer.config;
 
 import com.smelnikov.libs.dto.Product;
 import org.apache.kafka.clients.producer.ProducerConfig;

@@ -5,7 +5,10 @@ import com.smelnikov.producer.restclient.service.Producer;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("kafka")
@@ -20,8 +23,8 @@ public class Controller {
         return product;
     }
 
-    @Bean
-    public NewTopic adviceTopic(){
-        return new NewTopic("user", 3, (short) 1);
-    }
+//    @Bean
+//    public NewTopic adviceTopic(){
+//        return new NewTopic("user", 3, (short) 1);
+//    }
 }
