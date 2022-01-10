@@ -3,8 +3,6 @@ package com.smelnikov.producer.restclient.controller;
 import com.smelnikov.libs.dto.Product;
 import com.smelnikov.producer.restclient.service.Producer;
 import lombok.RequiredArgsConstructor;
-import org.apache.kafka.clients.admin.NewTopic;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +21,4 @@ public class Controller {
         return product;
     }
 
-//    @Bean
-//    public NewTopic adviceTopic(){
-//        return new NewTopic("user", 3, (short) 1);
-//    }
 }

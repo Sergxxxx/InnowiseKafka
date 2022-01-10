@@ -3,8 +3,6 @@ package com.smelnikov.producer.restclient.service;
 import com.smelnikov.libs.dto.Product;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -17,13 +15,12 @@ import org.springframework.util.concurrent.ListenableFutureCallback;
 @Slf4j
 @NoArgsConstructor
 public class Producer {
-    private static final Logger logger = LoggerFactory.getLogger(Producer.class);
     private static final String TOPIC = "user";
 
     @Autowired
     private KafkaTemplate<String, Product> kafkaTemplate;
 
-    @Value(value = "user")
+    @Value(value = TOPIC)
     private String topicName;
 
     public void sendMessage(Product product){
@@ -41,4 +38,5 @@ public class Producer {
             }
         });
     }
+
 }
