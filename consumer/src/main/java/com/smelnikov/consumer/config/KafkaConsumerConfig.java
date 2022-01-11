@@ -1,5 +1,6 @@
 package com.smelnikov.consumer.config;
 
+import com.smelnikov.consumer.listener.MessageListener;
 import com.smelnikov.libs.dto.Product;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -46,6 +47,11 @@ public class KafkaConsumerConfig {
         ConcurrentKafkaListenerContainerFactory<String, Product> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
         return factory;
+    }
+
+    @Bean
+    public MessageListener messageListener() {
+        return new MessageListener();
     }
 
 }
